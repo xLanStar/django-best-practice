@@ -10,27 +10,32 @@ Django 最佳實踐文件
 - 兼容水平擴展
 - 高效
 - 高安全性
+- 易於維護
+- 易於開發
 
 具體來說，我們將使用以下技術來達到這些目標。
 
-- 使用 pyenv_ 來管理 Python 版本
-- 使用 Poetry_ 來管理 Python 套件
-- 使用 Session 來管理使用者登入狀態
-- 使用 django-allauth_ 來管理使用者帳號
+- 使用 pyenv_ 管理 Python 版本
+- 使用 Poetry_ 管理 Python 套件
+- 使用 ruff_ 作為 Linter 和 Formatter
+   - 遵循 `Google Docstrings 風格 <https://google.github.io/styleguide/pyguide.html#38-comments-and-docstrings>`_
+- 使用 Session 管理使用者登入狀態
+- 使用 django-allauth_ 管理使用者帳號
    - 可使用 Email 或 Username 來登入
    - 整合 Google、Apple、Facebook 等第三方登入
    - 追蹤使用者登入狀態、IP 位置、裝置及歷史
    - 自訂 RestAPI 以兼容 React Native
-- 整合 django-storages_ 來管理靜態和媒體檔案
-   - 使用 Backend 來儲存靜態檔案
+- 整合 django-storages_ 管理靜態和媒體檔案
+   - 使用 Backend 儲存靜態檔案
 - 整合 django-ninja_
    - 使用 Router 管理 API 路由。
    - 自動產生 OpenAPI 文件。
 - 使用 Redis_ 作為快取資料庫
    - 使用 Redis 來儲存 Session
    - 使用底層為 C 語言的 hiredis-py_ 程式庫來進一步提升 Redis 效能
-- 使用 Celery_ 來處理非同步任務
+- 使用 Celery_ 處理非同步任務
 
+.. _ruff: https://github.com/astral-sh/ruff
 .. _pyenv: https://github.com/pyenv/pyenv
 .. _Poetry: https://python-poetry.org/
 .. _django-allauth: https://django-allauth.readthedocs.io/en/latest/
@@ -47,7 +52,8 @@ Django 最佳實踐文件
    :caption: 環境
    :name: section-environment
 
-   environment/setup
+   environment/setup-environment
+   environment/setup-project
    environment/project-structure
 
 .. toctree::
