@@ -1,4 +1,19 @@
 repos:
+  - repo: https://github.com/astral-sh/uv-pre-commit
+    rev: 0.6.11
+    hooks:
+      - id: uv-sync
+      - id: uv-lock
+      - id: uv-export
+        args:
+          [
+            "--frozen",
+            "--no-hashes",
+            "--no-dev",
+            "--no-annotate",
+            "--output-file=requirements.txt",
+          ]
+
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v5.0.0
     hooks:
